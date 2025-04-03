@@ -1,4 +1,4 @@
-# cp02DSSC
+# CP02DSSC
 
 CP02 - Análise Exploratória e Inferencial de Dados sobre a produtividade na construção
 
