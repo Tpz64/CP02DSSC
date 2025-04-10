@@ -53,6 +53,7 @@ col1, col2 = st.columns([2,2])
 
 with col1:
     st.write("A análise que será abordada neste estudo tem como foco obras elétricas, com o objetivo de avaliar a qualidade de cada projeto, o tempo de execução e os materiais empregados. Esse processo busca aprimorar as previsões para futuras obras, otimizar a qualidade dos serviços prestados e compreender melhor o fluxo de desenvolvimento dessas obras.")
+    st.write("Por se tratar de uma amostra, as análises contidas neste dashbord podem estar sujeitas a alterações.")
 
 with col2: 
     st.image("imgs/img-instalacao-eletrica.jpg",width=400)

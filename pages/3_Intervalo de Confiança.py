@@ -38,10 +38,15 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 st.header("Intervalo de confiança")
-st.subheader("Parte 1")
-st.write("Iremos fazer em aula, no dia 04 de abril.")
-st.write("Entregar até o dia 11/04 antes da aula.")
+
 st.markdown("""
+            ----------
+**Parte 1**
+            
+Iremos fazer em aula, no dia 04 de abril.
+            
+Entregar até o dia 11/04 antes da aula.
+            
 • Deverá conter:
 - Aplicação e visualização de Intervalos de Confiança
 - Interpretação prática com base no contexto do dataset 
