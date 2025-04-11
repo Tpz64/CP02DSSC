@@ -7,35 +7,35 @@ import plotly.graph_objects as go
 #info lateral da equipe
 st.sidebar.markdown("""
     <div style="
-        background-color: #ffff; 
+        background-color: #fffbf5; 
         color:white;
         padding: 9px; 
         border-radius: 10px;
         text-align: center;
     ">
-        <p style="color:black; font-weight: bold;">Desenvolvido por:</p>
+        <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com/in/thaisgleoncio/" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
-                Thaís Leoncio
+               style="color: black; text-decoration: none;">
+                Thaís Gonçalves Leoncio
             </a>
         </div>
     </div>
@@ -85,8 +85,7 @@ df_conf = pd.DataFrame(confidence_data)
 df_conf["Erro Inferior"] = df_conf["Média"] - df_conf["Inferior"]
 df_conf["Erro Superior"] = df_conf["Superior"] - df_conf["Média"]
 
-st.write("**Tabela de Intervalo de Confiança por Cabo**")
-
+#Grafico
 # Selecionando e renomeando colunas para exibição
 tabela = df_conf[["Cabo", "Média", "Inferior", "Superior"]].copy()
 tabela.columns = ["Cabo", "Média", "Limite Inferior", "Limite Superior"]
@@ -123,7 +122,7 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.write("Embora estatisticamente os intervalos de confiança se sobreponham, sugerindo que não há diferença significativa entre os tipos de cabo, na prática essa diferença pode impactar o planejamento de mão de obra. Por exemplo, em uma equipe de três pessoas, a diferença entre os cabos pode representar até uma semana de trabalho a mais, o que influencia diretamente no custo e prazo da instalação.")
+st.write("Embora estatisticamente os intervalos de confiança se sobreponham, sugerindo que não há diferença significativa entre os tipos de cabo, na prática essa diferença pode impactar o planejamento de mão de obra. Para isso, faremos uma análise mais profuda da instalação e custos. ")
 st.write("Assim, o intervalo de confiança não apenas reforça a robustez dos dados, como também auxilia na tomada de decisão prática, mesmo quando a diferença estatística não é clara.")
 
 st.subheader("Análise de Instalação e custos")
@@ -222,7 +221,7 @@ df_comparativo = pd.DataFrame(comparativo_data)
 st.markdown("<h4>Comparativo Geral (Custo x Tempo Médio)</h4>", unsafe_allow_html=True)
 st.dataframe(df_comparativo, use_container_width=True)
 
-st.write("Observando a ultima tabela, concluimos que o cabo 02 B possui o melhor custo beneficio, com um bom tempo e um bom custo. O mais barato seria o cabo 01 A, porém com um tempo maior de instalação. O mais rápido de instalar seria o cabo 03, mas teria um custo maior. E o cabo 04 seria o que mais custaria tanto em tempo como em valores. ")
+st.write("Com base na última tabela, concluímos que o Cabo 02B apresenta o melhor custo-benefício, equilibrando adequadamente tempo de instalação e valor. Embora o Cabo 01A seja o mais barato, ele demanda um tempo maior para instalação. Já o Cabo 03 se destaca pela agilidade na execução, porém com um custo mais elevado. Por fim, o Cabo 04 é o menos vantajoso, pois representa o maior custo tanto em termos de tempo quanto de investimento financeiro.")
 
 
 st.markdown("""

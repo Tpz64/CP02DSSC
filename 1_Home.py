@@ -44,7 +44,7 @@ st.sidebar.markdown("""
 st.header("Introdução do caso")
 st.write("A construção civil é um dos setores mais importantes para o desenvolvimento socioeconômico de um país, sendo responsável por obras de infraestrutura, habitação e urbanização. Seu impacto direto na geração de empregos, movimentação da economia e melhoria da qualidade de vida torna essencial o aprimoramento constante de suas práticas. Nesse contexto, a produtividade na construção civil se destaca como um dos principais indicadores de eficiência do setor.")
 st.write("O índice de produtividade na construção civil é utilizado para medir o desempenho das equipes ou dos processos executivos de uma obra, demonstrando quanto de determinado serviço é produzido em um intervalo de tempo com os recursos disponíveis. Sua fórmula básica é:")
-st.write("Produtividade = Quantidade Produzida / Recursos Utilizados")
+st.latex(r"Produtividade = \frac{Quantidade Produzida}{Recursos Utilizados}")
 st.write("Esse índice permite aos gestores planejar com maior precisão, controlar custos, otimizar o uso de materiais e mão de obra, além de identificar gargalos nos processos construtivos. Com ele, é possível promover a melhoria contínua dos métodos de execução, resultando em obras mais rápidas, econômicas e sustentáveis.")
 st.write("Neste dashboard iremos analisar uma base de dados já tratada que foi utilizada para a atualização da tabela SIURB, uma tabela que é desenvolvida pela Secretaria Municipal de Infraestrutura Urbana e Obras, que reúne composições de custos unitários de serviços, preços de insumos e índices de produtividade da mão de obra, sendo utilizada como referência obrigatória em orçamentos de obras públicas municipais.")
 
@@ -57,5 +57,3 @@ with col1:
 
 with col2: 
     st.image("imgs/img-instalacao-eletrica.jpg",width=400)
-
-st.header("Falar sobre o calculo de produtividade")

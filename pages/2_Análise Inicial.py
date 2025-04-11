@@ -11,42 +11,42 @@ from scipy.stats import norm
 #info lateral da equipe
 st.sidebar.markdown("""
     <div style="
-        background-color: #ffff; 
+        background-color: #fffbf5; 
         color:white;
         padding: 9px; 
         border-radius: 10px;
         text-align: center;
     ">
-        <p style="color:black; font-weight: bold;">Desenvolvido por:</p>
+        <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com/in/thaisgleoncio/" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
-                Thaís Leoncio
+               style="color: black; text-decoration: none;">
+                Thaís Gonçalves Leoncio
             </a>
         </div>
     </div>
 """, unsafe_allow_html=True)
 
 #titulo da página
-st.header("Analise Inicial dos dados")
+st.header("Análise Inicial dos dados")
 
 #Barra de carregamento
 my_bar = st.progress(0)
@@ -55,7 +55,7 @@ for percent_complete in range(100):
      my_bar.progress(percent_complete + 1)
 
 
-st.write("A tabela original possui milhares de informações sobre as mais diversas etapas das obra, desde a parte inical, como a remoção de material, até mesmo etapas finais, com os revestimentos. Porém como o foco da nossa analise se trata das instalações eletricas, decidimos apresentar o dataframe abaixo com as informações já filtradas.")
+st.write("A tabela que temos que foi extraida de uma parte de um dataset que foi usada para renovar a tabela SIURB. Ambas as tabelas possuem milhares de informações sobre as mais diversas etapas das obra, desde a parte inicial da obra, como a remoção de terra, até mesmo etapas finais, com os revestimentos. Porém como o foco da nossa analise se trata das instalações elétricas, decidimos apresentar o dataframe abaixo com as informações já filtradas com os dados que vamos usar para a nossa análise.")
 
 #leitura excel
 excel_path = "dados/df_diarios.xlsx"
@@ -105,29 +105,46 @@ st.markdown("""
 5. Qual a Diferença entre tipos de cabos e seus valores?
 6. ⁠Existe um cabo mais utilizado, se sim porque?
 """)
-st.subheader("Principais Hipótese:")
+st.subheader("Principal Hipótese:")
 st.markdown("""
 - Acreditamos que haverá uma clara distinção de produtividade entre os cabos maiores e os cabos menores.
 """)
 
-st.subheader("Diferenças entre os cabos:")
+st.subheader("Analisando a diferenças entre os cabos:")
+
+st.write("Uma das principais coisas que percebemos ao verificar a base de dados é a existência de 04 tipos de cabos diferentes na coluna classe. Para melhor visualização e análise, decidimos filtrar as colunas por tipos de cabo.")
 
 cabo_selecionado = st.selectbox("Selecione o tipo de cabo: ",valores_cabos)
 df_filtrado = df_cabos[df_cabos['classe']== cabo_selecionado]
 st.write(f"#### Dados para {cabo_selecionado}")
 st.dataframe(df_filtrado)
 
-st.write("Os cabos na tabela estão separados em 04 categorias, porém ao analisarmos sua descrição, percebemos a existência de 06 tipos de cabos diferentes dos quais listamos abaixo quais são e seus preços por metro.")
-st.markdown("""
-1. CABO 01 -> CABO FLEXÍVEL PVC-750V - 3 CONDUTORES - 1,5MM2 -> R$ 1,24/mt
-2. CABO 01 -> CABO 1,00MM2 - ISOLAMENTO PARA 0,7KV - CLASSE 4 - FLEXÍVEL -> R$ 3,16/mt            
-3. CABO 02 -> CABO COBRE FLEXÍVEL, ISOL. 750V NÃO HALOGENADO, ATICHAMA - 2,5MM2 -> R$ 2,58/mt
-4. CABO 02 -> CABO FLEXÍVEL PVC - 750V - 3 CONDUTORES - 2,50MM2 -> R$ 1,96/mt
-5. CABO 03 -> CABO COBRE FLEXÍVEL, ISOL. 750V NÃO HALOGENADO, ANTICHAMA - 4,0MM2 -> R$ 3,26/mt
-6. CABO 04 -> CABO 16,00MM2 - ISOLAMENTO PARA 1,0KV - CLASSE 4 - FLEXÍVEL -> R$ 13,24/mt 
-""")
+st.write("Apesar dos cabos na tabela estarem separados em 04 categorias, ao analisarmos sua descrição, percebemos a existência de 06 tipos de cabos diferentes dos quais listamos abaixo quais são e seus preços por metro.")
 
-st.write("Percebemos que o maior cabo, que é o CABO 04, é também o mais caro, custando mais de 13 reais o metro, enquanto que os outro variam entre 1 a 3 reais o metro.")
+dados_cabos = {
+    "Código": ["Cabo 01", "Cabo 01", "Cabo 02", "Cabo 02", "Cabo 03", "Cabo 04"],
+    "Descrição": [
+        "Cabo flexível PVC - 750V - 3 condutores - 1,5mm²",
+        "Cabo 1,00mm² - Isolamento para 0,7kV - Classe 4 - Flexível",
+        "Cabo cobre flexível, isol. 750V não halogenado, antichama - 2,5mm²",
+        "Cabo flexível PVC - 750V - 3 condutores - 2,50mm²",
+        "Cabo cobre flexível, isol. 750V não halogenado, antichama - 4,0mm²",
+        "Cabo 16,00mm² - Isolamento para 1,0kV - Classe 4 - Flexível"
+    ],
+    "Preço por metro (R$)": [1.24, 3.16, 2.58, 1.96, 3.26, 13.24]
+}
+
+df_cabos = pd.DataFrame(dados_cabos)
+
+st.dataframe(df_cabos, use_container_width=True)
+
+st.write("Ao realizar as pesquisas de preso, percebemos que o maior cabo, que é o CABO 04, é também o mais caro, custando mais de 13 reais o metro, enquanto os demais cabos variam entre 1 a 3 reais o metro.")
+
+st.markdown("**Indice de Produtividade**")
+st.write("O indice de produtividade, coluna IP_D, será a coluna que mais utilizaremos ao longo da nossa análise, pois como foi dito anteriormente, é o principal indicador de eficiência do setor. A fórmula para chegar ao seu valor é:")
+st.latex(r"IP = \frac{QNTD}{QS}")
+st.write("Onde a QNTD veio da coluna de mesmo nome, medido em hora, e QS, veio da coluna com o mesmo nome, e é medido em metro.")
+
 
 st.markdown("""
             ---------

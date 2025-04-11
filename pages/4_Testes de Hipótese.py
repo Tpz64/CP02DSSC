@@ -3,35 +3,35 @@ import streamlit as st
 #info lateral da equipe
 st.sidebar.markdown("""
     <div style="
-        background-color: #ffff; 
+        background-color: #fffbf5; 
         color:white;
         padding: 9px; 
         border-radius: 10px;
         text-align: center;
     ">
-        <p style="color:black; font-weight: bold;">Desenvolvido por:</p>
+        <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
+               style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
         </div>
         <div>
             <a href="https://www.linkedin.com/in/thaisgleoncio/" target="_blank" 
-               style="color: black; text-decoration: none; font-weight: bold;">
-                Thaís Leoncio
+               style="color: black; text-decoration: none;">
+                Thaís Gonçalves Leoncio
             </a>
         </div>
     </div>
