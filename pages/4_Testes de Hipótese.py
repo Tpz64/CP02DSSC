@@ -38,6 +38,26 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 st.header("Testes de hipóteses")
+
+st.subheader("O que é?")
+
+st.write("É uma metodologia estatística que nos auxilia a tomar decisões sobre uma ou mais populações baseado na informação obtida da amostra, que nos permite verificar se os dados amostrais trazem evidêmcia que apoiem ou não uma hipótese estatística formulada. ")
+
+st.subheader("Hipótese nula")
+
+st.write("A nossa hipósete nula se baseia no nivel de produtividade entre o eletricista e o ajudante. Acreditamos que o eletricista é mais produtivo que o ajudante.")
+
+st.subheader("Hipótese alternativa")
+
+st.write("A nossa hipótese alternativa")
+
+st.subheader("Análise da hipótese")
+
+st.subheader("Conclusão Final")
+
+st.markdown("""
+--------------------------
+""")
 st.subheader("Parte 2")
 st.write("Iremos fazer em aula, no dia 11 de abril.")
 st.write("Entregar até o dia 25/04 antes da aula.")
