@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 import plotly.graph_objects as go
+import time
 
 #info lateral da equipe
 st.sidebar.markdown("""
@@ -15,19 +16,19 @@ st.sidebar.markdown("""
     ">
         <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/andr%C3%A9-neves-2980b0270/" target="_blank" 
                style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/becinaayu" target="_blank" 
                style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/isabela-barcellos-freire-91263328a/" target="_blank" 
                style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
@@ -41,6 +42,7 @@ st.sidebar.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+
 #leitura excel
 excel_path = "dados/df_diarios.xlsx"
 df = pd.read_excel(excel_path)
@@ -52,6 +54,12 @@ df_cabos = df1[df1['classe'].isin(valores_cabos)]
 
 
 st.header("Intervalo de confiança")
+
+#Barra de carregamento
+my_bar = st.progress(0)
+for percent_complete in range(100):
+     time.sleep(0.05)
+     my_bar.progress(percent_complete + 1)
 
 st.write("O intervalo de confiança é uma ferramenta estatística utilizada para estimar, com determinado nível de certeza, um valor populacional com base em uma amostra. Em vez de fornecer apenas uma média, o intervalo de confiança indica uma faixa na qual, com uma certa probabilidade (como 95%), acredita-se que o valor verdadeiro se encontra. Isso é especialmente útil quando se trabalha com dados amostrais e há incertezas envolvidas.")
 st.write("Na prática, usamos o intervalo de confiança para entender a variabilidade dos dados e a confiabilidade das estimativas. Quanto menor o intervalo, mais precisa é a estimativa; quanto maior, mais incerteza ela carrega.")

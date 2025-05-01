@@ -19,19 +19,19 @@ st.sidebar.markdown("""
     ">
         <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/andr%C3%A9-neves-2980b0270/" target="_blank" 
                style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/becinaayu" target="_blank" 
                style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/isabela-barcellos-freire-91263328a/" target="_blank" 
                style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
@@ -141,19 +141,12 @@ st.dataframe(df_cabos, use_container_width=True)
 
 st.write("Ao realizar as pesquisas de preso, percebemos que o maior cabo, que é o CABO 04, é também o mais caro, custando mais de 13 reais o metro, enquanto os demais cabos variam entre 1 a 3 reais o metro.")
 
-st.markdown("**Indice de Produtividade**")
-st.write("O indice de produtividade, coluna IP_D, será a coluna que mais utilizaremos ao longo da nossa análise, pois como foi dito anteriormente, é o principal indicador de eficiência do setor. A fórmula para chegar ao seu valor é:")
+st.markdown("**Índice de Produtividade**")
+st.write("O indice de produtividade, coluna IP_D, será a coluna que mais utilizaremos ao longo da nossa análise, pois como foi dito anteriormente, é o principal indicador de eficiência do setor. A fórmula utilizada para calcular o IP é:")
 st.latex(r"IP = \frac{QNTD}{QS}")
-st.write("Onde a QNTD veio da coluna de mesmo nome, medido em hora, e QS, veio da coluna com o mesmo nome, e é medido em metro.")
-
-
 st.markdown("""
-            ---------
-Parte 0 – Introdução ao Problema e à Base de Dados (obrigatório)
-- Apresentação clara do problema ou contexto de mercado
-- Descrição da base de dados e variáveis
-- Identificação de perguntas de análise e possíveis hipóteses
-- Conexão entre o problema real e o que será desenvolvido no
-dashboard
-- Organização inicial do layout e estrutura do dashboard
+Onde: 
+- **QNTD** = Quantidade de tempo dedicada à atividade (em horas)
+- **QS** = Quantidade de serviço realizada (em metros)
 """)
+st.write("Essa razão nos permite avaliar o tempo necessário por metro de cabo instalado, por exemplo.")

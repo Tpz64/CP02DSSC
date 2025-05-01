@@ -13,19 +13,19 @@ st.sidebar.markdown("""
     ">
         <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/andr%C3%A9-neves-2980b0270/" target="_blank" 
                style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/becinaayu" target="_blank" 
                style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/isabela-barcellos-freire-91263328a/" target="_blank" 
                style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>

@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
 from scipy.stats import ttest_ind, mannwhitneyu
-from scipy.stats import ttest_ind, mannwhitneyu, shapiro, levene
-
-import plotly.express as px
-from scipy.stats import ttest_ind
+import time
 
 #info lateral da equipe
 st.sidebar.markdown("""
@@ -17,19 +14,19 @@ st.sidebar.markdown("""
     ">
         <p style="color:black; font-weight:bold;">Desenvolvido por:</p>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/andr%C3%A9-neves-2980b0270/" target="_blank" 
                style="color: black; text-decoration: none;">
                 André de Sousa Neves
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/becinaayu" target="_blank" 
                style="color: black; text-decoration: none;">
                 Beatriz Dantas Sampaio
             </a>
         </div>
         <div>
-            <a href="https://www.linkedin.com" target="_blank" 
+            <a href="https://www.linkedin.com/in/isabela-barcellos-freire-91263328a/" target="_blank" 
                style="color: black; text-decoration: none;">
                 Isabela Barcellos Freire
             </a>
@@ -45,6 +42,13 @@ st.sidebar.markdown("""
 
 
 st.header("Testes de hipóteses")
+
+#Barra de carregamento
+my_bar = st.progress(0)
+for percent_complete in range(100):
+     time.sleep(0.05)
+     my_bar.progress(percent_complete + 1)
+
 st.markdown("""
 O teste de hipótese é uma técnica estatística que nos ajuda a tomar decisões sobre populações com base nos dados observados de uma amostra. Ele nos permite avaliar se há evidências suficientes para apoiar ou rejeitar uma **hipótese estatística previamente formulada**.
 
