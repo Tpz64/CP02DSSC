@@ -105,9 +105,10 @@ st.markdown("""
 5. Qual a Diferença entre tipos de cabos e seus valores?
 6. ⁠Existe um cabo mais utilizado, se sim porque?
 """)
-st.subheader("Principal Hipótese:")
+st.subheader("Principais Hipótese:")
 st.markdown("""
 - Acreditamos que haverá uma clara distinção de produtividade entre os cabos maiores e os cabos menores.
+- Acreditamos que o Eletricista será mais produtivo que o ajudante.             
 """)
 
 st.subheader("Analisando a diferenças entre os cabos:")
