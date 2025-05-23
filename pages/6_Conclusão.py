@@ -46,10 +46,17 @@ for percent_complete in range(100):
      time.sleep(0.05)
      my_bar.progress(percent_complete + 1)
 
-st.write("Em conclusão, a análise da produtividade na construção civil, especialmente no setor elétrico, revelou insights importantes sobre o desempenho das equipes, custos e escolha dos materiais. O índice de produtividade (IP_d) mostrou-se essencial para avaliar a eficiência das obras e otimizar os processos construtivos, proporcionando informações cruciais para o planejamento e controle de custos. Ao examinar os diferentes tipos de cabos utilizados nas obras, observou-se que, embora o Cabo 04 seja o mais caro, ele não se destacou em termos de produtividade, sendo o Cabo 02B o mais vantajoso em termos de custo-benefício.")
-st.write("A análise estatística, por meio de testes de hipótese, indicou que não há uma diferença significativa na produtividade entre eletricistas e ajudantes. Ambos os grupos apresentaram resultados semelhantes, o que sugere que, sob as condições específicas da análise, não há uma vantagem clara para o eletricista em termos de produtividade.")
-st.write("Esse estudo destaca a importância da análise detalhada dos dados para a otimização dos processos na construção civil, permitindo decisões mais informadas sobre os materiais e a alocação de mão de obra. Embora os resultados não tenham mostrado grandes disparidades entre as categorias de trabalhadores, a contínua análise de dados e ajustes nos processos são fundamentais para o aumento da produtividade e a redução de custos nas obras.")
+st.markdown("""
+Este estudo permitiu uma análise detalhada da produtividade na construção civil, com foco nas instalações elétricas, reunindo evidências relevantes sobre a eficiência dos profissionais, o impacto dos materiais utilizados e a robustez dos processos de execução.
 
+As comparações entre os tipos de cabos mostraram que, embora o Cabo 04 seja o mais caro, ele não se destacou em produtividade. Por outro lado, o Cabo 02B apresentou o melhor custo-benefício, combinando eficiência na execução com custo acessível — um dado valioso para a gestão de orçamentos em obras públicas e privadas.
+
+Com relação ao desempenho das equipes, os testes de hipótese não identificaram diferença significativa entre a produtividade média de eletricistas e ajudantes. No entanto, a regressão linear revelou uma forte associação entre os dois grupos, com coeficiente de correlação de 0,95 e um R² de 0,90, o que indica que 90% da variação na produtividade dos eletricistas pode ser explicada pela produtividade dos ajudantes nos mesmos dias de trabalho. Essa interdependência revela que a atuação dos ajudantes tem papel direto no desempenho geral das equipes, e não pode ser considerada isoladamente.
+
+O gráfico de regressão reforça visualmente essa conclusão. Os pontos observados concentram-se ao redor da linha de tendência, indicando baixa dispersão e alta previsibilidade. Além disso, o intervalo de confiança estreito demonstra a precisão do modelo ajustado, ampliando a segurança na interpretação dos resultados.
+
+A análise integrada entre estatísticas descritivas, testes de hipótese e modelagem preditiva possibilitou uma compreensão aprofundada da dinâmica produtiva nas obras analisadas. Os resultados desafiam a percepção tradicional de que eletricistas atuam com produtividade superior de forma isolada, ao passo que destacam a importância da sinergia entre funções complementares no canteiro de obras. Em termos gerenciais, os achados reforçam a relevância de manter escalas bem coordenadas, utilizar os insumos de forma estratégica e basear as decisões em dados concretos. Concluímos, portanto, que a aplicação de métodos estatísticos à gestão da produtividade na construção civil é uma ferramenta poderosa para elevar a eficiência, reduzir desperdícios e qualificar a tomada de decisões — especialmente em projetos públicos que seguem parâmetros como os da Tabela SIURB.
+""")
 st.markdown(""" ----""")
 
 st.subheader("Comentários de um Engenheiro Elétrico sobre o trabalho:")
